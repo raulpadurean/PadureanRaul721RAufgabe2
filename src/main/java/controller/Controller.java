@@ -30,10 +30,10 @@ public class Controller {
         System.out.println("Preis: ");
         int preis = sc.nextInt();
         sc.nextLine();
-        System.out.println("Jahreszeit");
-        String jahr = sc.nextLine();
+        System.out.println("Herkunfstort");
+        String herkunftsort = sc.nextLine();
 
-        service.createAProdukt(name, preis, jahr);
+        service.createAProdukt(name, preis, herkunftsort);
     }
 
     public void showAProdukt(){
@@ -51,10 +51,10 @@ public class Controller {
         System.out.println("Preis: ");
         int preis = sc.nextInt();
         sc.nextLine();
-        System.out.println("Jahreszeit:");
-        String jahreszeit = sc.nextLine();
+        System.out.println("Herkunftsort:");
+        String herkunftsort = sc.nextLine();
 
-        service.updateProdukt(new Produkt(name, preis, jahreszeit));
+        service.updateProdukt(new Produkt(name, preis, herkunftsort));
     }
 
     public void deleteProdukt(){
@@ -120,7 +120,7 @@ public class Controller {
 
     public void charakterenNachProduktjahreszeitFiltrieren(){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Jahreszeit: ");
+        System.out.println("Herkunftsort: ");
         String herkunftsort = sc.nextLine();
 
         for (Charaktere charaktere: service.filterNachProduktHerkunftsort(herkunftsort))
@@ -133,7 +133,7 @@ public class Controller {
         int id = sc.nextInt();
         sc.nextLine();
 
-        System.out.println("Steigend/Fallend sortieren:");
+        System.out.println("aufsteigend oder absteigend");
         String modus = sc.nextLine();
 
         for (Produkt produkt: service.nachPreissortierteProdukteEinesCharakteren(id, modus))

@@ -77,7 +77,7 @@ public class Service {
             if (p.getId() == id)
                 return p;
         }
-        throw new RuntimeException("Kunde nicht gefunden");
+        throw new RuntimeException("Charaktere nicht gefunden");
     }
 
     public void updateCharaktere(Charaktere charaktere){
@@ -128,7 +128,7 @@ public class Service {
 
         produktList.sort(Produkt::compareTo);
 
-        if (sortierModus.equals("Steigend"))
+        if (sortierModus.equals("aufsteigend "))
             return produktList;
         else
         {

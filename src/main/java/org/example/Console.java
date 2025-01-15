@@ -70,7 +70,7 @@ public class Console {
                             4. Einen Charakteren aktualisieren
                             5. Einen Charakteren loschen
                             6. Charakteren nach Ort filtrieren
-                            7. Charakteren finden, die ein Produkt in einer gegebenen Jahreszeit gekauft haben
+                            7. Charakteren finden, die ein Produkt in einer gegebenen Herkunftsort gekauft haben
                             8. Sortiere Produkte eines Charakteren nach Preis
                             0. Exit""");
                     int crudOption = sc.nextInt();
@@ -83,7 +83,7 @@ public class Console {
                         case 5: {controller.deleteCharaktere(); break;}
                         case 6: {controller.charakterenNachOrtFiltrieren(); break;}
                         case 7: {controller.charakterenNachProduktjahreszeitFiltrieren(); break;}
-                        //case 8: {controller.produkteEinesCharakterenNachPreisSortieren(); break;}
+                        case 8: {controller.produkteEinesCharakterenNachPreisSortieren(); break;}
                         case 0:break;
                     }
                 }
@@ -110,9 +110,9 @@ public class Console {
     }
 
     public void initialiseData(Repository<Charaktere> charaktereRepository, Repository<Produkt> produktRepository) {
-        Produkt produkt1 = new Produkt("50kg Dumbbell",400,"Cluj");
-        Produkt produkt2 = new Produkt("25kg Dumbbell",200,"Buzau");
-        Produkt produkt3 = new Produkt("10kg Dumbbell",100,"Bucuresti");
+        Produkt produkt1 = new Produkt("Sword",400,"Cluj");
+        Produkt produkt2 = new Produkt("Shield",200,"Buzau");
+        Produkt produkt3 = new Produkt("Potion",100,"Bucuresti");
 
 
         produktRepository.addElement(produkt1);
@@ -121,16 +121,16 @@ public class Console {
 
 
         List<Produkt> listeCharaktere1 = new ArrayList<>();
-        listeCharaktere1.add(produkt1); listeCharaktere1.add(produkt3); listeCharaktere1.add(produkt1);
-        Charaktere charaktere1 = new Charaktere(1,"Kevin","Lituanien",listeCharaktere1);
+        listeCharaktere1.add(produkt1); listeCharaktere1.add(produkt3);
+        Charaktere charaktere1 = new Charaktere(1,"Jon","Sud",listeCharaktere1);
 
         List<Produkt> listeCharaktere2 = new ArrayList<>();
-        listeCharaktere2.add(produkt2); listeCharaktere2.add(produkt2);
-        Charaktere charaktere2 = new Charaktere(2,"Maria","Polen",listeCharaktere2);
+        listeCharaktere2.add(produkt2); listeCharaktere2.add(produkt3);
+        Charaktere charaktere2 = new Charaktere(2,"Arya","Ost",listeCharaktere2);
 
         List<Produkt> listeCharaktere3 = new ArrayList<>();
-        listeCharaktere3.add(produkt3); listeCharaktere3.add(produkt3);
-        Charaktere charaktere3 = new Charaktere(3,"Markus","Amerika",listeCharaktere3);
+        listeCharaktere3.add(produkt3);
+        Charaktere charaktere3 = new Charaktere(3,"Snow","West",listeCharaktere3);
 
 
 

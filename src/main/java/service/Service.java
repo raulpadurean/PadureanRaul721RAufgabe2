@@ -115,26 +115,26 @@ public class Service {
         return charaktereRepository.getAllElements().stream().filter(charaktere -> charaktere.richtigeHerkunftsort(herkunftsort)).toList();
     }
 
-//    public List<Produkt> nachPreissortierteProdukteEinesCharakteren(int id,String sortierModus){
-//        Charaktere charaktere = new Charaktere();
-//        for (Charaktere p : charaktereRepository.getAllElements()){
-//            if (p.getId() == id){
-//                charaktere = p;
-//                break;
-//            }
-//        }
-//
-//        List<Produkt> produktList = charaktere.getListeProdukte();
-//
-//        produktList.sort(Produkt::compareTo);
-//
-//        if (sortierModus.equals("Steigend"))
-//            return produktList;
-//        else
-//        {
-//            return produktList.reversed();
-//
-//        }
-//    }
+    public List<Produkt> nachPreissortierteProdukteEinesCharakteren(int id,String sortierModus){
+        Charaktere charaktere = new Charaktere();
+        for (Charaktere p : charaktereRepository.getAllElements()){
+            if (p.getId() == id){
+                charaktere = p;
+                break;
+            }
+        }
+
+        List<Produkt> produktList = charaktere.getListeProdukte();
+
+        produktList.sort(Produkt::compareTo);
+
+        if (sortierModus.equals("Steigend"))
+            return produktList;
+        else
+        {
+            return produktList;
+
+        }
+    }
 }
 

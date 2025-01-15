@@ -127,17 +127,17 @@ public class Controller {
             System.out.println(charaktere);
     }
 
-    public void produkteEinesCharakterenNachPreisSortieren(){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("ID des Charakteren: ");
-        int id = sc.nextInt();
-        sc.nextLine();
-
-        System.out.println("Steigend/Fallend sortieren:");
-        String modus = sc.nextLine();
-
-        for (Produkt produkt: service.nachPreissortierteProdukteEinesCharakteren(id, modus))
-            System.out.println(produkt);
-    }
+//    public void produkteEinesCharakterenNachPreisSortieren(){
+//        Scanner sc = new Scanner(System.in);
+//        System.out.println("ID des Charakteren: ");
+//        int id = sc.nextInt();
+//        sc.nextLine();
+//
+//        System.out.println("Steigend/Fallend sortieren:");
+//        String modus = sc.nextLine();
+//
+//        for (Produkt produkt: service.nachPreissortierteProdukteEinesCharakteren(id, modus))
+//            System.out.println(produkt);
+//    }
 }
 
